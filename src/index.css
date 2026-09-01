@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply m-0 min-h-screen bg-slate-50 font-sans text-slate-800 antialiased;
+    background:
+      radial-gradient(circle at 10% 10%, rgba(147,197,253,.22), transparent 28%),
+      radial-gradient(circle at 90% 0%, rgba(191,219,254,.30), transparent 25%),
+      linear-gradient(135deg, #eef4ff 0%, #f8fafc 55%, #e0ecff 100%);
+  }
+  button, input, select, textarea { font: inherit; }
+}
+
+@layer components {
+  .field-input {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[15px] text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10;
+  }
+  .field-input.invalid {
+    @apply border-red-500 bg-red-50/50 focus:border-red-500 focus:ring-red-500/10;
+  }
+  .choice-card {
+    @apply flex cursor-pointer items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 transition hover:border-blue-300 hover:bg-blue-50/50;
+  }
+  .choice-card.selected {
+    @apply border-blue-500 bg-blue-50 ring-2 ring-blue-500/10;
+  }
+}
